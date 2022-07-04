@@ -1,13 +1,37 @@
-form{
-    height: 100vh;
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+header{
+    height: 5rem;
+    width: 100vw;
+    background-color: rgb(219, 45, 45);
+}
+.navegacion{
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
     display: flex;
-    flex-direction:column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
-input{
-    margin: 1rem 0;
+.navegacion a {
+    padding: 1rem;
+    border: 2px solid rgb(65, 14, 14);
+    background-color: rgba(255, 0, 0, 0.877);
+    text-decoration: none;
+    color: whitesmoke;
 }
-input[type=submit]{
-    width: max-content;
+main{
+    margin:auto;
+    max-width: 1024px;
+    height: max-content;
+    background-color: rgb(179, 179, 179);
+}
+h1{
+    margin: 0;
+    text-align:center;
 }

@@ -5,20 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Subir archivos</title>
+    <title>API MARVEL</title>
 </head>
 <body>
+    <header>
+        <nav class="navegacion">
+            <a href="">Characters</a>
+            <a href="">Comics</a>
+            <a href="">Series</a>
+            <a href="">Stories</a>
+        </nav>
+    </header>
     <main>
-        <form class="formulario" action="">
-            <input type="file" name="archivo" id="input-file" onchange="handleFiles(this.files)" required multiple>
-            <input type="submit" value="Subir Archivos">
-        </form>
+        <h1>Characters</h1>
     </main>
+    <template id="template-characters">
+
+    </template>
 </body>
 <script src="index.js"></script>
-<script>
-    function handleFiles(obj){
-        console.log(obj)
-    }
-</script>
 </html>

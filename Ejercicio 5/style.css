@@ -2,6 +2,7 @@ body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 main{
     width: 100%;
@@ -9,13 +10,13 @@ main{
 }
 h1{
     text-align:center;
+    margin: 0 auto;
 }
 .pokemons{
     width: 100%;
     height: 85%;
     display: grid;
     grid-template-columns: repeat(5,1fr);
-    flex-wrap: wrap;
 }
 .slice{
     margin: auto;
@@ -43,4 +44,21 @@ input{
 }
 button{
     height: 100%;
+}
+.loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    z-index: 999;
+    transition: all .2s ease;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.active{
+    visibility: visible;
+    background-color: aliceblue;
 }

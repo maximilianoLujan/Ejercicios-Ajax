@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    text-align:center;
+}
+main{
+    display: flex;
+}
+section{
+    width: 50%;
+    height: max-content;
+    background-color: #987601;
+    height: 20rem;
+}
+form{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#artista,input[type="submit"],#letra{
+    height: 1.6rem;
+    margin: .7rem .7rem .7rem 0; 
+    border: none;
+    outline: none;
+    border-bottom: double 2px rgb(12,244,244);
+}

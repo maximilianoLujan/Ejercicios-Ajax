@@ -28,19 +28,33 @@
             }
             $seccionartista.innerHTML = "";
             const $clone = d.importNode($template,true),
-                $nombre = $clone.querySelector("h3"),
+                $nombre = $clone.querySelector("h2"),
                 $genero = $clone.querySelector(".genero"),
                 $lugar = $clone.querySelector(".lugar"),
                 $sitio = $clone.querySelector(".sitio")
                 $imagen = $clone.querySelector("img"),
                 $descripcion = $clone.querySelector("p");
-            let art = json.artists[0];
+            let art = json.artists[0],
+                genero = art.strGenre || "La API no proporciona un genero para este artista",
+                pais = art.strCountry || "La API no proporciona el pais de origen de este artista";
+                let sitio,imagen;
+                if (art.strWebsite === ""){
+                    sitio = "error.html"
+                } else{
+                    sitio = `https://${art.strWebsite}`
+                }
+                if (art.strArtistBanner === null){
+                    imagen = "Images/error.png";
+                } else {
+                    imagen = `${art.strArtistBanner}`
+                }
+                console.log(sitio)
                 $nombre.textContent += `${art.strArtist}`;
-                $genero.textContent = `Genero: ${art.strGenre}`;
-                $lugar.textContent = `Lugar de Origen: ${art.strCountry}`;
-                $sitio.innerHTML = `<a href="https://${art.strWebsite}" target="_blank">Visita su sitio web</a>`;
-                $imagen.setAttribute("src",`${art.strArtistBanner}`);
-                $imagen.setAttribute("alt",`art.strArtist`)
+                $genero.textContent = `Genero: ${genero}`;
+                $lugar.textContent = `Lugar de Origen: ${pais}`;
+                $sitio.innerHTML = `<a href="${sitio}" target="_blank">Visita su sitio web</a>`;
+                $imagen.setAttribute("src",`${imagen}`);
+                $imagen.setAttribute("alt",`${art.strArtist}`)
                 $descripcion.textContent = `${art.strBiographyEN}`;
 
                 $seccionartista.appendChild($clone);

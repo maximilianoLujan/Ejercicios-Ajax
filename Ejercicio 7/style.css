@@ -5,7 +5,7 @@ body{
 h1{
     text-align:center;
 }
-h3{
+h2{
     text-align: center;
 }
 main{
@@ -14,7 +14,7 @@ main{
 section{
     width: 50%;
     height: max-content;
-    background-color: #987601;
+    background-color: rgb(12,244,244);
 }
 form{
     height: 5rem;
@@ -30,9 +30,14 @@ form{
     border-bottom: double 2px rgb(12,244,244);
 }
 img{
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: auto;
 }
 p{
     padding: .5rem;
+}
+figcaption{
+    display: flex;
+    flex-direction: column;
 }

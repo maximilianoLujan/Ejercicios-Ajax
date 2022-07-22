@@ -5,6 +5,9 @@ body{
 h1{
     text-align:center;
 }
+h3{
+    text-align: center;
+}
 main{
     display: flex;
 }
@@ -12,7 +15,6 @@ section{
     width: 50%;
     height: max-content;
     background-color: #987601;
-    height: 20rem;
 }
 form{
     height: 5rem;
@@ -26,4 +28,11 @@ form{
     border: none;
     outline: none;
     border-bottom: double 2px rgb(12,244,244);
+}
+img{
+    width: 100%;
+    height: auto;
+}
+p{
+    padding: .5rem;
 }

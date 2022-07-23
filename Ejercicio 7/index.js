@@ -14,6 +14,7 @@
             return
         }
         traerArtista($artista.value);
+        traerLetra($artista.value,$letra.value)
     })
     const traerArtista = async (artista)=>{
         try {
@@ -48,7 +49,6 @@
                 } else {
                     imagen = `${art.strArtistBanner}`
                 }
-                console.log(sitio)
                 $nombre.textContent += `${art.strArtist}`;
                 $genero.textContent = `Genero: ${genero}`;
                 $lugar.textContent = `Lugar de Origen: ${pais}`;
@@ -61,6 +61,25 @@
             
         } catch (error) {
             $seccionartista.innerHTML += `<h2>${error}</h2>`;
+        }
+    }
+    const traerLetra = async (artista,letra) =>{
+        const $seccionletra = d.querySelector(".seccion-letra"),
+            $loader = d.getElementById("loader");
+        
+        $seccionletra.innerHTML = "";
+        $seccionletra.append($loader);
+        $loader.style.display ="block";
+
+        try {
+            const res = await fetch(`https://api.lyrics.ovh/v1/${artista}/${letra}`),
+                json = await res.json();
+                $loader.style.display ="none";
+            $seccionletra.innerHTML += `
+                <h2>${letra}</h2>
+                <blockquote>${json.lyrics}</blockquote>`
+        } catch (error){
+            console.log(error);
         }
     }
 })();
